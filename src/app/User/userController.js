@@ -24,9 +24,9 @@ exports.getTest = async function (req, res) {
 exports.postUsers = async function (req, res) {
 
     /**
-     * Body: email, password, nickname
+     * Body: name, phone, email, jobGroupIdx, jobIdx, career, skill, university, company empathy, interest, trend
      */
-    const {email, password, nickname} = req.body;
+    const {name, phone, email, password, jobGroupIdx, jobIdx, career, skill, university, company, empathy, interest, trend} = req.body;
 
     // 빈 값 체크
     if (!email)
@@ -44,9 +44,19 @@ exports.postUsers = async function (req, res) {
 
 
     const signUpResponse = await userService.createUser(
+        name,
+        phone,
         email,
         password,
-        nickname
+        jobGroupIdx,
+        jobIdx,
+        career,
+        skill,
+        university,
+        company,
+        empathy,
+        interest,
+        trend
     );
 
     return res.send(signUpResponse);
