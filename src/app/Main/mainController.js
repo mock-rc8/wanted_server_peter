@@ -33,7 +33,7 @@ exports.getMain = async function (req, res) {
         return res.send(response(baseResponse.SUCCESS, mainListByEmail));
     }
 
-    
+
 }
 
 
