@@ -1,11 +1,55 @@
 // 모든 유저 조회
 async function selectmain(connection) {
-  const selectmainListQuery = `
+  /*const selectmainListQuery = `
                 SELECT email, name 
                 FROM main;
-                `;
-  const [mainRows] = await connection.query(selectmainListQuery);
-  return mainRows;
+                `;*/
+  let mainResultArray = [];
+  const selectContentsQuery = `
+    SELECT *
+    FROM (SELECT contentsIdx, title, introduction, thumbnailUrl, type, link, tag, creator, status
+    FROM Contents
+    ORDER BY RAND()) contents
+    WHERE contents.status = 'active'
+    LIMIT 8;
+  `;
+  const selectWantedContentsQuery = `
+    SELECT *
+FROM
+  (SELECT wantedContentsIdx, title, thumbnailUrl, type, tag1, link, status
+  FROM wantedContents
+  ORDER BY RAND())WC
+  WHERE WC.status = 'active'
+  LIMIT 4;
+  `;
+  const selectWantedPlustQuery = `
+      SELECT *
+  FROM (SELECT wantedPlusIdx, name, title, introduction, thumbnailUrl, tag, status
+  FROM wantedPlus
+  ORDER BY RAND()) WP
+  WHERE WP.status = 'active'
+  LIMIT 4;
+  `;
+  const selectContentsTwoQuery = `
+  SELECT * FROM
+  (SELECT wantedContentsIdx, title, thumbnailUrl, type, isOnline, endDate, link, status
+  FROM wantedContents
+  ORDER BY RAND())WC
+  WHERE WC.status = 'active'
+  LIMIT 2;
+  `;
+
+  //const [mainRows] = await connection.query(selectmainListQuery);
+  const [contentsRows] = await connection.query(selectContentsQuery);
+  mainResultArray.push(contentsRows);
+  const [wantedContentsRows] = await connection.query(selectWantedContentsQuery);
+  mainResultArray.push(wantedContentsRows);
+  const [wantedPlusRows] = await connection.query(selectWantedPlustQuery);
+  mainResultArray.push(wantedPlusRows);
+  const [contentsTwoRows] = await connection.query(selectContentsTwoQuery);
+  mainResultArray.push(contentsTwoRows);
+
+  return mainResultArray;
 }
 
 // 이메일로 회원 조회
