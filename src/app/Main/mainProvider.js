@@ -6,20 +6,13 @@ const mainDao = require("./mainDao");
 // Provider: Read 비즈니스 로직 처리
 
 exports.retrieveMainList = async function (tag) {
-  if (!tag) { // 나에게 필요한 커리어 인사이트 태그 선택을 안했을 경우
-    const connection = await pool.getConnection(async (conn) => conn);
-    const mainListResult = await mainDao.selectmain(connection);
-    connection.release();
 
-    return mainListResult;
+  const connection = await pool.getConnection(async (conn) => conn);
+  const mainListResult = await mainDao.selectMain(connection, tag);
+  connection.release();
 
-  } else {
-    const connection = await pool.getConnection(async (conn) => conn);
-    const mainListResult = await mainDao.selectmainEmail(connection, email);
-    connection.release();
+  return mainListResult;
 
-    return mainListResult;
-  }
 };
 
 exports.retrievemain = async function (mainId) {

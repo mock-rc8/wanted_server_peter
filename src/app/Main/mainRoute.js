@@ -12,6 +12,7 @@ module.exports = function(app){
     // 3. 특정 유저 조회 API
     // app.get('/app/mains/:mainId', main.getmainById);
 
+    // 메인 화면 조회 API
     app.get('/app/mains', main.getMain);
 
 };

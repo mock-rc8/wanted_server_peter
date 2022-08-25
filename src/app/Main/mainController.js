@@ -17,26 +17,14 @@ exports.getTest = async function (req, res) {
 }
 
 /**
- * API No. 2
- * API Name : 유저 조회 API (+ 이메일로 검색 조회)
  * [GET] /app/mains
  */
 exports.getMain = async function (req, res) {
 
-    /*if (!email) {
-        // 유저 전체 조회
-        const mainListResult = await mainProvider.retrievemainList();
-        return res.send(response(baseResponse.SUCCESS, mainListResult));
-    } else {
-        // 유저 검색 조회
-        const mainListByEmail = await mainProvider.retrievemainList(email);
-        return res.send(response(baseResponse.SUCCESS, mainListByEmail));
-    }*/
-
     const tag = req.query.tag;
     const mainListResult = await mainProvider.retrieveMainList(tag);
-    return res.send(response(baseResponse.SUCCESS), mainListResult);
 
+    return res.send(response(baseResponse.SUCCESS, mainListResult));
 }
 
 

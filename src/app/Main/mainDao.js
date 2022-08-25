@@ -1,11 +1,10 @@
 // 모든 유저 조회
-async function selectmain(connection) {
-  /*const selectmainListQuery = `
-                SELECT email, name 
-                FROM main;
-                `;*/
+async function selectMain(connection, tag) {
+
   let mainResultArray = [];
-  const selectContentsQuery = `
+  //console.log('mainDao에서 tag: ', tag);
+  if(!tag){
+    const selectContentsQuery = `
     SELECT *
     FROM (SELECT contentsIdx, title, introduction, thumbnailUrl, type, link, tag, creator, status
     FROM Contents
@@ -13,6 +12,23 @@ async function selectmain(connection) {
     WHERE contents.status = 'active'
     LIMIT 8;
   `;
+    const [contentsRows] = await connection.query(selectContentsQuery);
+    mainResultArray.push(contentsRows);
+  }
+  else{
+    const selectContentsQuery = `
+    SELECT *
+    FROM (SELECT contentsIdx, title, introduction, thumbnailUrl, type, link, tag, creator, status
+    FROM Contents
+    ORDER BY RAND()) contents
+    WHERE contents.status = 'active' AND contents.tag =?
+    LIMIT 8;
+  `;
+    const [contentsRows] = await connection.query(selectContentsQuery, tag);
+    mainResultArray.push(contentsRows);
+  }
+  //console.log('contentsRows 타입: ', typeof mainResultArray[0]);
+
   const selectWantedContentsQuery = `
     SELECT *
 FROM
@@ -22,7 +38,7 @@ FROM
   WHERE WC.status = 'active'
   LIMIT 4;
   `;
-  const selectWantedPlustQuery = `
+  const selectWantedPlusQuery = `
       SELECT *
   FROM (SELECT wantedPlusIdx, name, title, introduction, thumbnailUrl, tag, status
   FROM wantedPlus
@@ -39,17 +55,15 @@ FROM
   LIMIT 2;
   `;
 
-  //const [mainRows] = await connection.query(selectmainListQuery);
-  const [contentsRows] = await connection.query(selectContentsQuery);
-  mainResultArray.push(contentsRows);
   const [wantedContentsRows] = await connection.query(selectWantedContentsQuery);
   mainResultArray.push(wantedContentsRows);
-  const [wantedPlusRows] = await connection.query(selectWantedPlustQuery);
+  const [wantedPlusRows] = await connection.query(selectWantedPlusQuery);
   mainResultArray.push(wantedPlusRows);
   const [contentsTwoRows] = await connection.query(selectContentsTwoQuery);
   mainResultArray.push(contentsTwoRows);
-
+  //console.log('mainResultArray 타입: ', typeof mainResultArray);
   return mainResultArray;
+
 }
 
 // 이메일로 회원 조회
@@ -138,7 +152,7 @@ async function updatemainInfo(connection, id, nickname) {
 
 
 module.exports = {
-  selectmain,
+  selectMain,
   selectmainEmail,
   selectmainId,
   insertmainInfo,
