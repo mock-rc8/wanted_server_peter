@@ -6,6 +6,7 @@ const {response, errResponse} = require("../../../config/response");
 
 const regexEmail = require("regex-email");
 const {emit} = require("nodemon");
+const {decode} = require("jsonwebtoken");
 
 /**
  * API No. 0
@@ -70,8 +71,28 @@ exports.postrecruits = async function (req, res) {
 exports.getRecruits = async function (req, res) {
 
     console.log('getRecruits 시작');
+    const testURI = 'localhost:3000/app/recruits/2?tag1=퇴사율 10% 이하&tag2=급성장';
+    const encodeTest = encodeURI(testURI);
+    console.log('encodeTest: ', encodeTest);
+    const decodeTest = decodeURI(encodeTest);
+    console.log('decodeTest: ', decodeTest);
+
+    //console.log('req.get(\'host\'): ', req.get('host')); // localhost:3000
+    //console.log('req.protocol: ', req.protocol); // http
 
     const isLogged = req.params.logged; // isLogged 1이면 로그인한 상태 나머지는 로그인하지 않은 상태
+    let reqUri = req.url;
+    console.log('req.url: ', reqUri);
+
+    let fullUrl = req.get('host') + reqUri;
+    console.log('fullUrl: ',fullUrl);
+    console.log('length ', encodeTest.length, fullUrl.length);
+    console.log(fullUrl == encodeTest);
+    console.log(typeof encodeTest, typeof fullUrl);
+    //console.log("encodedFullUrl: ", encodeURI(fullUrl));
+    console.log('decodedFullUrl: ', decodeURI(fullUrl));
+
+
     let tag1 = req.query.tag1;
     const tag2 = req.query.tag2;
     console.log('tag1: ', tag1);
