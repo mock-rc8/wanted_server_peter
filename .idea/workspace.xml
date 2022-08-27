@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea7d5fcd-88aa-4335-ac72-c2db843d3046" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/Event/eventController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Event/eventDao.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Event/eventProvider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Event/eventRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Event/eventService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Resume/resumeController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Resume/resumeDao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Resume/resumeProvider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Resume/resumeService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/express.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/express.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" beforeDir="false" afterPath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,17 +27,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/macbookpro/Desktop/wanted_server_peter/src/app/Event&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/macbookpro/Desktop/wanted_server_peter/src/app/Resume",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/Resume" />
       <recent name="$PROJECT_DIR$/src/app/Event" />
       <recent name="$PROJECT_DIR$/src/app/Recruit" />
       <recent name="$PROJECT_DIR$/src/app/Main" />
@@ -70,7 +69,7 @@
       <workItem from="1661428463704" duration="3642000" />
       <workItem from="1661466387371" duration="11855000" />
       <workItem from="1661509758607" duration="12151000" />
-      <workItem from="1661592589082" duration="1420000" />
+      <workItem from="1661592589082" duration="6930000" />
     </task>
     <servers />
   </component>
