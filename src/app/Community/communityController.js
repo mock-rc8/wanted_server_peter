@@ -11,9 +11,7 @@ exports.getCommunities = async function(req, res) {
 
     const communityListResult = await communityProvider.retrieveCommunityList();
 
-
-
-    return res.send(response(baseResponse.SUCCESS, communityListResult))
+    return res.send(response(baseResponse.SUCCESS, communityListResult));
 }
 
 
@@ -23,7 +21,7 @@ exports.getCommunities = async function(req, res) {
  * [GET] /app/test
  */
 exports.getTest = async function (req, res) {
-    return res.send(response(baseResponse.SUCCESS))
+    return res.send(response(baseResponse.SUCCESS));
 }
 
 /**
@@ -159,7 +157,18 @@ exports.patchcommunitys = async function (req, res) {
     }
 };
 
+exports.postCommunity = async function(req, res) {
+    //const userIdx = req.params.useridx;
+    //const postCommunityInfo = req.body;
+    //console.log(postCommunityInfo);
 
+    const {userIdx, empathy, interest, trend, nickname, title, content, imgUrl} = req.body;
+    const postCommunityInfo = [userIdx, empathy, interest, trend, nickname, title, content, imgUrl];
+    console.log('postCommunityInfo: ', postCommunityInfo);
+    const postCommunityResult = await communityService.postCommunity(postCommunityInfo);
+
+    return res.send(postCommunityResult);
+}
 
 /** JWT 토큰 검증 API
  * [GET] /app/auto-login

@@ -20,4 +20,8 @@ module.exports = function(app){
     // 커뮤니티 페이지 조회 API
     app.get('/app/communities', community.getCommunities);
 
+    // 커뮤니티 글 작성 API
+    app.post('/app/communities', community.postCommunity);
+
+
 };

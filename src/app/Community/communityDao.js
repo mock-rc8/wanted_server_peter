@@ -1,13 +1,26 @@
 // 커뮤니티 페이지 조회
 async function selectCommunity(connection){
   const selectCommunityListQuery = `
-  SELECT communityIdx, userIdx, empathy, interest, trend, profileUrl, nickname, jobGroupIdx, career, title, content, imgUrl, tag, likeNum, commentNum, status
+  SELECT communityIdx, userIdx, empathy, interest, trend, profileUrl, nickname, jobGroupIdx, career, title, content, imgUrl, likeNum, commentNum, status
   FROM Community
   WHERE status = 'active'
   `;
   const [communityRows] = await connection.query(selectCommunityListQuery);
   return communityRows;
 }
+
+// 커뮤니티 글 작성
+async function insertCommunityInfo(connection, postCommunityInfo){
+
+  const postCommunityQuery = `
+    INSERT INTO Community(userIdx, empathy, interest, trend, nickname, title, content, imgUrl) values
+      (?, ?, ?, ?, ?, ?, ?, ?);
+  `;
+
+  const postCommunityResult = await connection.query(postCommunityQuery, postCommunityInfo);
+  return postCommunityResult;
+}
+
 // 모든 유저 조회
 async function selectcommunity(connection) {
   const selectcommunityListQuery = `
@@ -112,4 +125,5 @@ module.exports = {
   selectcommunityAccount,
   updatecommunityInfo,
   selectCommunity,
+  insertCommunityInfo,
 };

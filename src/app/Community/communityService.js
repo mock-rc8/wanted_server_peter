@@ -13,6 +13,14 @@ const {connect} = require("http2");
 
 // Service: Create, Update, Delete 비즈니스 로직 처리
 
+exports.postCommunity = async function(postCommunityInfo){
+
+    const connection = await pool.getConnection(async (conn) => conn);
+    const postCommunityResult = await communityDao.insertCommunityInfo(connection, postCommunityInfo);
+    connection.release();
+    return response(baseResponse.SUCCESS, postCommunityResult);
+}
+
 exports.createcommunity = async function (name,
                                      phone,
                                      email,
