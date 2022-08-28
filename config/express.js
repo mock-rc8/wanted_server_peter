@@ -23,6 +23,7 @@ module.exports = function () {
     require('../src/app/Event/eventRoute')(app);
     require('../src/app/Recruit/recruitRoute')(app);
     require('../src/app/Resume/resumeRoute')(app);
+    require('../src/app/Community/communityRoute')(app);
 
     // require('../src/app/Board/boardRoute')(app);
 

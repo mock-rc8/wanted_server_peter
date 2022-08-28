@@ -6,12 +6,33 @@ const {response, errResponse} = require("../../../config/response");
 
 const regexEmail = require("regex-email");
 const {emit} = require("nodemon");
-
+/**
+ *[GET] /app/resumes/:useridx
+ *
+ */
 exports.getResumeByUser = async function (req, res) {
     const userIdx = req.params.useridx;
     const resumeUserResult = await resumeProvider.retrieveResume(userIdx);
 
     return res.send(response(baseResponse.SUCCESS, resumeUserResult));
+}
+
+exports.postResumeByUser = async function (req, res) {
+    const userIdx = req.params.useridx;
+    const resumeIdx = req.params.resumeidx;
+
+    const {title, name, email, phone, aboutMe, skill,  // Resume
+        careerStart, careerEnd, company, workType, department, duty, careerIsCurrent, // ResumeCareer
+        performance, performanceStart, performanceEnd, content, // ResumePerformance
+        educationStart, educationEnd, school, major, finishClass, eduIsCurrent, // ResumeEducation
+        prizeDate, activityName, activityDetail, // ResumePrize
+        language, langClass, // ResumeLanguage
+        testName, score, testDate, // ResumeLangTest
+        link // ResumeLink
+    } = req.body;
+
+    const postResumeResult = await resumeService.postResume(userIdx);
+    return res.send(response(baseResponse.SUCCESS, postResumeResult));
 }
 
 /**
@@ -20,6 +41,7 @@ exports.getResumeByUser = async function (req, res) {
  * [GET] /app/test
  */
 exports.getTest = async function (req, res) {
+
     return res.send(response(baseResponse.SUCCESS))
 }
 

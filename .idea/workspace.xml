@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea7d5fcd-88aa-4335-ac72-c2db843d3046" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/Resume/resumeController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Resume/resumeDao.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Resume/resumeProvider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Resume/resumeService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Community/communityController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Community/communityDao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Community/communityProvider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Community/communityRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Community/communityService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/express.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/express.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" beforeDir="false" afterPath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +36,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/macbookpro/Desktop/wanted_server_peter/src/app/Resume",
+    "last_opened_file_path": "/Users/macbookpro/Desktop/wanted_server_peter/src/app/Community",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/Community" />
       <recent name="$PROJECT_DIR$/src/app/Resume" />
       <recent name="$PROJECT_DIR$/src/app/Event" />
       <recent name="$PROJECT_DIR$/src/app/Recruit" />
@@ -69,7 +74,8 @@
       <workItem from="1661428463704" duration="3642000" />
       <workItem from="1661466387371" duration="11855000" />
       <workItem from="1661509758607" duration="12151000" />
-      <workItem from="1661592589082" duration="6930000" />
+      <workItem from="1661592589082" duration="8108000" />
+      <workItem from="1661620637027" duration="5775000" />
     </task>
     <servers />
   </component>
