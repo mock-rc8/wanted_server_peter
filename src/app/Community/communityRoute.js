@@ -35,6 +35,7 @@ module.exports = function(app){
     // 커뮤니티 댓글 수정 API
     app.patch('/app/communities/:commentidx', community.patchComment);
 
-    
+    // 커뮤니티 댓글 삭제 API
+    app.patch('/app/communities/:commentidx/delete', community.patchCommentDelete);
 
 };

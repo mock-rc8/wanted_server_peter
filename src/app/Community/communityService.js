@@ -54,6 +54,14 @@ exports.patchComment = async function(patchCommentInfo){
     return response(baseResponse.SUCCESS, patchCommentResult);
 }
 
+// 커뮤니티 글 댓글 삭제 API
+exports.patchCommentDelete = async function(commentIdx){
+    const connection = await pool.getConnection(async (conn) => conn);
+    const patchCommentDeleteResult = await communityDao.updateCommentStatus(connection, commentIdx);
+    connection.release();
+    return response(baseResponse.SUCCESS, patchCommentDeleteResult);
+}
+
 exports.createcommunity = async function (name,
                                      phone,
                                      email,

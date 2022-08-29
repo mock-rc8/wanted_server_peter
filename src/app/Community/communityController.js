@@ -79,6 +79,15 @@ exports.patchComment = async function(req, res){
 }
 
 /**
+ *  커뮤니티 글 댓글 삭제 API
+ */
+exports.patchCommentDelete = async function(req, res){
+    const commentIdx = req.params.commentidx;
+    const patchCommentDeleteResult = await communityService.patchCommentDelete(commentIdx);
+    return res.send(patchCommentDeleteResult);
+}
+
+/**
  * API No. 0
  * API Name : 테스트 API
  * [GET] /app/test

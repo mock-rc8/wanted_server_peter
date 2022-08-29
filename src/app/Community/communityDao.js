@@ -61,6 +61,15 @@ async function updateComment(connection, patchCommentInfo){
   return updateCommentResult;
 }
 
+// 커뮤니티 글 댓글 삭제
+async function updateCommentStatus(connection, commentIdx){
+  const updateCommentStatusQuery = ` 
+  UPDATE CommunityComment SET status = 'inactive'
+WHERE commentIdx = ?;
+  `;
+  const updateCommentStatusResult = await connection.query(updateCommentStatusQuery, commentIdx);
+  return updateCommentStatusResult;
+}
 
 // 모든 유저 조회
 async function selectcommunity(connection) {
@@ -171,5 +180,6 @@ module.exports = {
   updateCommunityStatus,
   insertComment,
   updateComment,
+  updateCommentStatus,
 
 };
