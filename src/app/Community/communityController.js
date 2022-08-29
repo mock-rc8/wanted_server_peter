@@ -6,7 +6,10 @@ const {response, errResponse} = require("../../../config/response");
 
 const regexEmail = require("regex-email");
 const {emit} = require("nodemon");
-
+/**
+ *
+ * 커뮤니티 조회
+ */
 exports.getCommunities = async function(req, res) {
 
     const communityListResult = await communityProvider.retrieveCommunityList();
@@ -14,6 +17,34 @@ exports.getCommunities = async function(req, res) {
     return res.send(response(baseResponse.SUCCESS, communityListResult));
 }
 
+/**
+ *
+ * 커뮤니티 글 작성
+ */
+exports.postCommunity = async function(req, res) {
+
+    const {userIdx, empathy, interest, trend, nickname, title, content, imgUrl} = req.body;
+    const postCommunityInfo = [userIdx, empathy, interest, trend, nickname, title, content, imgUrl];
+    //console.log('postCommunityInfo: ', postCommunityInfo);
+    const postCommunityResult = await communityService.postCommunity(postCommunityInfo);
+
+    return res.send(postCommunityResult);
+}
+
+
+/**
+ *
+ * 커뮤니티 글 수정
+ */
+exports.patchCommunity = async function(req, res) {
+    const communityIdx = req.params.communityidx;
+    const {empathy, interest, trend, title, content, imgUrl} = req.body;
+    const patchCommunityInfo = [empathy, interest, trend, title, content, imgUrl, communityIdx];
+    const postCommunityResult = await communityService.patchCommunity(patchCommunityInfo);
+
+    return res.send(postCommunityResult);
+
+}
 
 /**
  * API No. 0
@@ -157,18 +188,7 @@ exports.patchcommunitys = async function (req, res) {
     }
 };
 
-exports.postCommunity = async function(req, res) {
-    //const userIdx = req.params.useridx;
-    //const postCommunityInfo = req.body;
-    //console.log(postCommunityInfo);
 
-    const {userIdx, empathy, interest, trend, nickname, title, content, imgUrl} = req.body;
-    const postCommunityInfo = [userIdx, empathy, interest, trend, nickname, title, content, imgUrl];
-    console.log('postCommunityInfo: ', postCommunityInfo);
-    const postCommunityResult = await communityService.postCommunity(postCommunityInfo);
-
-    return res.send(postCommunityResult);
-}
 
 /** JWT 토큰 검증 API
  * [GET] /app/auto-login

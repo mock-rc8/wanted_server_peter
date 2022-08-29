@@ -13,12 +13,20 @@ const {connect} = require("http2");
 
 // Service: Create, Update, Delete 비즈니스 로직 처리
 
+// 커뮤니티 글 작성
 exports.postCommunity = async function(postCommunityInfo){
 
     const connection = await pool.getConnection(async (conn) => conn);
     const postCommunityResult = await communityDao.insertCommunityInfo(connection, postCommunityInfo);
     connection.release();
     return response(baseResponse.SUCCESS, postCommunityResult);
+}
+
+exports.patchCommunity = async function(patchCommunityInfo){
+    const connection = await pool.getConnection(async (conn) => conn);
+    const patchCommunityResult = await communityDao.updateCommunityInfo(connection, patchCommunityInfo);
+    connection.release();
+    return response(baseResponse.SUCCESS, patchCommunityResult);
 }
 
 exports.createcommunity = async function (name,

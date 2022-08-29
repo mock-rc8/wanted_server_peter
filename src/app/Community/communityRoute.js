@@ -23,5 +23,8 @@ module.exports = function(app){
     // 커뮤니티 글 작성 API
     app.post('/app/communities', community.postCommunity);
 
+    // 커뮤니티 글 수정 API
+    app.patch('/app/communities/:communityidx', community.patchCommunity);
+
 
 };

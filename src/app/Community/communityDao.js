@@ -9,6 +9,8 @@ async function selectCommunity(connection){
   return communityRows;
 }
 
+
+
 // 커뮤니티 글 작성
 async function insertCommunityInfo(connection, postCommunityInfo){
 
@@ -19,6 +21,16 @@ async function insertCommunityInfo(connection, postCommunityInfo){
 
   const postCommunityResult = await connection.query(postCommunityQuery, postCommunityInfo);
   return postCommunityResult;
+}
+
+// 커뮤니티 글 수정
+async function updateCommunityInfo(connection, patchCommunityInfo){
+  const patchCommunityQuery = ` 
+  UPDATE Community SET empathy = ?, interest = ?, trend = ?, title = ?, content = ?, imgUrl = ?
+  WHERE communityIdx = ?; 
+  `;
+  const patchCommunityResult = await connection.query(patchCommunityQuery, patchCommunityInfo);
+  return patchCommunityResult;
 }
 
 // 모든 유저 조회
@@ -126,4 +138,5 @@ module.exports = {
   updatecommunityInfo,
   selectCommunity,
   insertCommunityInfo,
+  updateCommunityInfo,
 };
