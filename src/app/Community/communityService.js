@@ -22,11 +22,28 @@ exports.postCommunity = async function(postCommunityInfo){
     return response(baseResponse.SUCCESS, postCommunityResult);
 }
 
+// 커뮤니티 글 수정
 exports.patchCommunity = async function(patchCommunityInfo){
     const connection = await pool.getConnection(async (conn) => conn);
     const patchCommunityResult = await communityDao.updateCommunityInfo(connection, patchCommunityInfo);
     connection.release();
     return response(baseResponse.SUCCESS, patchCommunityResult);
+}
+
+// 커뮤니티 글 삭제
+exports.patchCommunityDelete = async function(communityIdx){
+    const connection = await pool.getConnection(async (conn) => conn);
+    const patchCommunityDeleteResult = await communityDao.updateCommunityStatus(connection, communityIdx);
+    connection.release();
+    return response(baseResponse.SUCCESS, patchCommunityDeleteResult);
+}
+
+// 커뮤니티 글 댓글 추가
+exports.postComment = async function(postCommentInfo){
+    const connection = await pool.getConnection(async (conn) => conn);
+    const postCommentResult = await communityDao.insertComment(connection, postCommentInfo);
+    connection.release();
+    return response(baseResponse.SUCCESS, postCommentResult);
 }
 
 exports.createcommunity = async function (name,

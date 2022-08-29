@@ -4,7 +4,6 @@
     <list default="true" id="ea7d5fcd-88aa-4335-ac72-c2db843d3046" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" beforeDir="false" afterPath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Community/communityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Community/communityDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityDao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Community/communityRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityRoute.js" afterDir="false" />
@@ -70,7 +69,7 @@
       <workItem from="1661466387371" duration="11855000" />
       <workItem from="1661509758607" duration="12151000" />
       <workItem from="1661592589082" duration="8108000" />
-      <workItem from="1661620637027" duration="15648000" />
+      <workItem from="1661620637027" duration="17827000" />
     </task>
     <servers />
   </component>

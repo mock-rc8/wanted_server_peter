@@ -40,10 +40,31 @@ exports.patchCommunity = async function(req, res) {
     const communityIdx = req.params.communityidx;
     const {empathy, interest, trend, title, content, imgUrl} = req.body;
     const patchCommunityInfo = [empathy, interest, trend, title, content, imgUrl, communityIdx];
-    const postCommunityResult = await communityService.patchCommunity(patchCommunityInfo);
+    const patchCommunityResult = await communityService.patchCommunity(patchCommunityInfo);
 
-    return res.send(postCommunityResult);
+    return res.send(patchCommunityResult);
 
+}
+
+/**
+ *
+ * 커뮤니티 글 삭제 API
+ */
+exports.patchCommunityDelete = async function(req, res){
+    const communityIdx = req.params.communityidx;
+    const deleteCommunityResult = await communityService.patchCommunityDelete(communityIdx);
+    return res.send(deleteCommunityResult);
+}
+
+/**
+ *  커뮤니티 글에 댓글 추가 API
+ */
+exports.postComment = async function(req, res){
+    const communityIdx = req.params.communityidx;
+    const {userIdx, imgUrl, comment, nickname} = req.body;
+    const postCommentInfo = [communityIdx, userIdx, imgUrl, comment, nickname];
+    const postCommentResult = await communityService.postComment(postCommentInfo);
+    return res.send(postCommentResult);
 }
 
 /**

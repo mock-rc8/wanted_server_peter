@@ -9,8 +9,6 @@ async function selectCommunity(connection){
   return communityRows;
 }
 
-
-
 // 커뮤니티 글 작성
 async function insertCommunityInfo(connection, postCommunityInfo){
 
@@ -31,6 +29,26 @@ async function updateCommunityInfo(connection, patchCommunityInfo){
   `;
   const patchCommunityResult = await connection.query(patchCommunityQuery, patchCommunityInfo);
   return patchCommunityResult;
+}
+
+// 커뮤니티 글 삭제
+async function updateCommunityStatus(connection, communityIdx){
+  const updateCommunityStatusQuery = ` 
+  UPDATE Community SET status = "inactive"
+    WHERE communityIdx = ?;
+  `;
+  const updateCommunityStatusResult = await connection.query(updateCommunityStatusQuery, communityIdx);
+  return updateCommunityStatusResult;
+}
+
+// 커뮤니티 글 댓글 추가
+async function insertComment(connection, postCommentInfo){
+  const insertCommunityQuery = ` 
+  INSERT INTO CommunityComment(communityIdx, userIdx, imgUrl, comment, nickname) VALUES
+    (?, ?, ?, ?, ?);
+  `;
+  const insertCommentResult = await connection.query(insertCommunityQuery, postCommentInfo);
+  return insertCommentResult;
 }
 
 // 모든 유저 조회
@@ -139,4 +157,7 @@ module.exports = {
   selectCommunity,
   insertCommunityInfo,
   updateCommunityInfo,
+  updateCommunityStatus,
+  insertComment,
+
 };
