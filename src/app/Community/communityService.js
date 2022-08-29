@@ -46,6 +46,14 @@ exports.postComment = async function(postCommentInfo){
     return response(baseResponse.SUCCESS, postCommentResult);
 }
 
+// 커뮤니티 글 댓글 수정 API
+exports.patchComment = async function(patchCommentInfo){
+    const connection = await pool.getConnection(async (conn) => conn);
+    const patchCommentResult = await communityDao.updateComment(connection, patchCommentInfo);
+    connection.release();
+    return response(baseResponse.SUCCESS, patchCommentResult);
+}
+
 exports.createcommunity = async function (name,
                                      phone,
                                      email,

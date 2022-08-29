@@ -51,6 +51,17 @@ async function insertComment(connection, postCommentInfo){
   return insertCommentResult;
 }
 
+// 커뮤니티 글 댓글 수정
+async function updateComment(connection, patchCommentInfo){
+  const updateCommentQuery = `
+  UPDATE CommunityComment SET comment = ?
+    WHERE commentIdx = ?;
+  `;
+  const updateCommentResult = await connection.query(updateCommentQuery, patchCommentInfo);
+  return updateCommentResult;
+}
+
+
 // 모든 유저 조회
 async function selectcommunity(connection) {
   const selectcommunityListQuery = `
@@ -159,5 +170,6 @@ module.exports = {
   updateCommunityInfo,
   updateCommunityStatus,
   insertComment,
+  updateComment,
 
 };

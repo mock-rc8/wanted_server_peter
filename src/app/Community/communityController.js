@@ -68,6 +68,17 @@ exports.postComment = async function(req, res){
 }
 
 /**
+ *  커뮤니티 글 댓글 수정 API
+ */
+exports.patchComment = async function(req, res){
+    const commentIdx = req.params.commentidx;
+    const comment = req.body;
+    const patchCommentInfo = [comment, commentIdx];
+    const patchCommentResult = await communityService.patchComment(patchCommentInfo);
+    return res.send(patchCommentResult);
+}
+
+/**
  * API No. 0
  * API Name : 테스트 API
  * [GET] /app/test
