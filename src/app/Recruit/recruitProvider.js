@@ -5,7 +5,7 @@ const recruitDao = require("./recruitDao");
 
 // Provider: Read 비즈니스 로직 처리
 
-exports.retrieveRecruitList = async function (isLogged, tag1, tag2) {
+exports.retrieveRecruitList = async function (userIdx, tag1, tag2) {
   /*if (!email) {
     const connection = await pool.getConnection(async (conn) => conn);
     const recruitListResult = await recruitDao.selectrecruit(connection);
@@ -23,11 +23,10 @@ exports.retrieveRecruitList = async function (isLogged, tag1, tag2) {
 
 
     const connection = await pool.getConnection(async (conn) => conn);
-    const recruitListResult = await recruitDao.selectRecruit(connection, isLogged, tag1, tag2);
+    const recruitListResult = await recruitDao.selectRecruit(connection, userIdx, tag1, tag2);
     connection.release();
 
     return recruitListResult;
-
 };
 
 exports.retrieveRecruitInfoList = async function(recruitInfoPathVariable) {

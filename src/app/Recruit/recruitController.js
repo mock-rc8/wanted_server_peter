@@ -80,7 +80,7 @@ exports.getRecruits = async function (req, res) {
     //console.log('req.get(\'host\'): ', req.get('host')); // localhost:3000
     //console.log('req.protocol: ', req.protocol); // http
 
-    const isLogged = req.params.logged; // isLogged 1이면 로그인한 상태 나머지는 로그인하지 않은 상태
+    const userIdx = req.params.useridx; // 패스 베리어블로 받는 회원 인덱스
     let reqUri = req.url;
     console.log('req.url: ', reqUri);
 
@@ -98,11 +98,10 @@ exports.getRecruits = async function (req, res) {
     console.log('tag1: ', tag1);
     console.log('tag2: ', tag2);
 
-    console.log('isLogged: ', isLogged);
     //const tag1 = req.body.tag1;
     //const tag2 = req.body.tag2;
 
-    const recruitListResult = await recruitProvider.retrieveRecruitList(isLogged, tag1, tag2);
+    const recruitListResult = await recruitProvider.retrieveRecruitList(userIdx, tag1, tag2);
     return res.send(response(baseResponse.SUCCESS, recruitListResult));
 };
 
