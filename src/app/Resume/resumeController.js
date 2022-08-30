@@ -1,6 +1,6 @@
 const jwtMiddleware = require("../../../config/jwtMiddleware");
-const resumeProvider = require("../../app/resume/resumeProvider");
-const resumeService = require("../../app/resume/resumeService");
+const resumeProvider = require("../../app/Resume/resumeProvider");
+const resumeService = require("../../app/Resume/resumeService");
 const baseResponse = require("../../../config/baseResponseStatus");
 const {response, errResponse} = require("../../../config/response");
 

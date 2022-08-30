@@ -1,6 +1,6 @@
 const jwtMiddleware = require("../../../config/jwtMiddleware");
-const communityProvider = require("../../app/community/communityProvider");
-const communityService = require("../../app/community/communityService");
+const communityProvider = require("../../app/Community/communityProvider");
+const communityService = require("../../app/Community/communityService");
 const baseResponse = require("../../../config/baseResponseStatus");
 const {response, errResponse} = require("../../../config/response");
 

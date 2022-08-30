@@ -5,9 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Community/communityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Event/eventController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Event/eventController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/User/userRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/User/userRoute.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +26,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/macbookpro/Desktop/wanted_server_peter/src/app/Community",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/macbookpro/Desktop/wanted_server_peter/src/app/Community&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/Community" />
@@ -69,7 +75,10 @@
       <workItem from="1661466387371" duration="11855000" />
       <workItem from="1661509758607" duration="12151000" />
       <workItem from="1661592589082" duration="8108000" />
-      <workItem from="1661620637027" duration="19382000" />
+      <workItem from="1661620637027" duration="21193000" />
+      <workItem from="1661777011350" duration="3903000" />
+      <workItem from="1661829120840" duration="2171000" />
+      <workItem from="1661863858253" duration="60000" />
     </task>
     <servers />
   </component>

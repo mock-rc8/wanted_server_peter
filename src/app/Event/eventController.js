@@ -1,6 +1,6 @@
 const jwtMiddleware = require("../../../config/jwtMiddleware");
-const eventProvider = require("../../app/event/eventProvider");
-const eventService = require("../../app/event/eventService");
+const eventProvider = require("../../app/Event/eventProvider");
+const eventService = require("../../app/Event/eventService");
 const baseResponse = require("../../../config/baseResponseStatus");
 const {response, errResponse} = require("../../../config/response");
 
@@ -14,10 +14,7 @@ exports.getEvents = async function(req, res){
     console.log('tag2: ', tag2);
     const eventList = await eventProvider.retrieveEvent(tag1, tag2);
     return res.send(response(baseResponse.SUCCESS, eventList));
-
-
 }
-
 
 
 /**

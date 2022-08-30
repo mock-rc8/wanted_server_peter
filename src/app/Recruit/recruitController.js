@@ -104,7 +104,6 @@ exports.getRecruits = async function (req, res) {
 
     const recruitListResult = await recruitProvider.retrieveRecruitList(isLogged, tag1, tag2);
     return res.send(response(baseResponse.SUCCESS, recruitListResult));
-
 };
 
 exports.getRecruitInfo = async function (req, res){
@@ -142,6 +141,5 @@ exports.patchBookmark = async function(req, res){
     console.log('recruitIdx: ', recruitIdx);
     const recruitBookmarkResult = await recruitService.patchRecruitBookmark(userIdx, recruitIdx);
     return res.send(response(baseResponse.SUCCESS, recruitBookmarkResult));
-
 }
 
