@@ -27,6 +27,6 @@ module.exports = function(app){
 
     // 채용공고 북마크 API
     // userIdx 또는 recruitIdx가 존재하지 않는 경우 validation 처리 해줘야 함.
-    app.patch('/app/recruits/:useridx/bookmarks/:recruitidx', recruit.patchBookmark);
+    //app.patch('/app/recruits/:useridx/bookmarks/:recruitidx', recruit.patchBookmark);
 
 };
