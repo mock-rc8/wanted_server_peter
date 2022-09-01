@@ -167,14 +167,54 @@ async function selectRecruit(connection, userIdx, tag1, tag2){
     }
     selectRecruitRows.push(recruitRows);
 
-  const [selectRecruitCompanyTag1Result] = await connection.query(selectTagRecruitQuery, tag1);
+  //const [selectRecruitCompanyTag1Result] = await connection.query(selectTagRecruitQuery, tag1);
   //console.log('[selectRecruitCompanyTag1Result]: ', selectRecruitCompanyTag1Result);
-  const [selectRecruitCompanyTag2Result] = await connection.query(selectTagRecruitQuery, tag2);
+  //const [selectRecruitCompanyTag2Result] = await connection.query(selectTagRecruitQuery, tag2);
   //console.log('[selectRecruitCompanyTag2Result]: ', selectRecruitCompanyTag2Result);
 
   //selectRecruitRows.push(selectRecruitCompanyTag1Result);
   //selectRecruitRows.push(selectRecruitCompanyTag2Result);
   //console.log('selectRecruitRows: ', selectRecruitRows);
+
+  return selectRecruitRows;
+}
+
+// 로그인 안했을경우 채용공고 페이지 조회
+async function selectRecruitNotLogged(connection, tag1, tag2){
+
+  let selectRecruitRows = []; // 반환할 배열
+
+  // 태그기반 채용공고 조회 쿼리문
+  const selectTagRecruitQuery = `
+    SELECT * FROM
+  ((SELECT recruitIdx, companyIdx, company, tag, thumbnailUrl, status
+  FROM Recruit
+  ORDER BY RAND())
+  )R LEFT JOIN (
+  SELECT companyIdx, industry, iconUrl
+  FROM Company) C
+  ON R.companyIdx = C.companyIdx
+  WHERE R.tag = ? AND status = 'active'
+  LIMIT 12;
+  `;
+
+  const recruitTag1Row = await connection.query(selectTagRecruitQuery, tag1); // 태그1 기반 조회 채용 공고 ex: #급성장 중 회사들을 모아봤어요
+  selectRecruitRows.push(recruitTag1Row[0]);
+  const recruitTag2Row = await connection.query(selectTagRecruitQuery, tag2); // 태그2 기반 조회 채용 공고 ex: #50인 이하 회사들을 모아봤어요
+  selectRecruitRows.push(recruitTag2Row[0]);
+
+  // 요즘뜨는 포지션 조회
+  const selectRecentRecruitQuery = `
+    SELECT * FROM
+      (SELECT recruitIdx, companyIdx, company, title, thumbnailUrl, nation, location, responseRatio, status
+       FROM Recruit
+       ORDER BY RAND()
+      ) R
+    WHERE R.status = "active"
+      LIMIT 4;
+  `
+  const recruitRecentRow = await connection.query(selectRecentRecruitQuery); // 요즘 뜨는 포지션 채용 공고
+  selectRecruitRows.push(recruitRecentRow[0]);
 
   return selectRecruitRows;
 }
@@ -227,7 +267,7 @@ async function updateRecruitBookmark(connection, userIdx, recruitIdx) {
   console.log('userIdx: ', userIdx);
   console.log('recruitIdx: ', recruitIdx);
   const isFirstBookmarkResult = await connection.query(isFirstBookmarkQuery, recruitBookmarkParams); // 에러 구간
-  console.log('isFirstBookmarkResult[0][0].isFirst: ', isFirstBookmarkResult[0][0].isFirst);
+  console.log('isFirstBookmarkResult: ', isFirstBookmarkResult);
   if(isFirstBookmarkResult[0][0].isFirst == 'Y'){
     //const RecruitBookmarkResult =
         await connection.query(insertRecruitBookmarkQuery, recruitBookmarkParams);
@@ -248,4 +288,5 @@ module.exports = {
   updaterecruitInfo,
   selectRecruitInfo,
   updateRecruitBookmark,
+  selectRecruitNotLogged,
 };

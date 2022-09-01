@@ -2,13 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea7d5fcd-88aa-4335-ac72-c2db843d3046" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/User/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/User/middlewares.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/passport/kakaoStrategy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" beforeDir="false" afterPath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Community/communityDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main/mainDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main/mainDao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitDao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitProvider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/User/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/User/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/User/userDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/User/userDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/User/userRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/User/userRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/User/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/User/userService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +62,7 @@
       <recent name="$PROJECT_DIR$/src/app/Main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/passport" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -78,7 +92,9 @@
       <workItem from="1661620637027" duration="21193000" />
       <workItem from="1661777011350" duration="3903000" />
       <workItem from="1661829120840" duration="2171000" />
-      <workItem from="1661863858253" duration="8071000" />
+      <workItem from="1661863858253" duration="8670000" />
+      <workItem from="1661922892497" duration="12520000" />
+      <workItem from="1661994055993" duration="17980000" />
     </task>
     <servers />
   </component>

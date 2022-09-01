@@ -70,33 +70,34 @@ exports.postrecruits = async function (req, res) {
  */
 exports.getRecruits = async function (req, res) {
 
-    console.log('getRecruits 시작');
+    /*console.log('getRecruits 시작');
     const testURI = 'localhost:3000/app/recruits/2?tag1=퇴사율 10% 이하&tag2=급성장';
     const encodeTest = encodeURI(testURI);
     console.log('encodeTest: ', encodeTest);
     const decodeTest = decodeURI(encodeTest);
-    console.log('decodeTest: ', decodeTest);
+    console.log('decodeTest: ', decodeTest);*/
 
     //console.log('req.get(\'host\'): ', req.get('host')); // localhost:3000
     //console.log('req.protocol: ', req.protocol); // http
 
     const userIdx = req.params.useridx; // 패스 베리어블로 받는 회원 인덱스
-    let reqUri = req.url;
-    console.log('req.url: ', reqUri);
+    console.log('userIdx: ', userIdx);
+    /*let reqUri = req.url;
+    console.log('req.url: ', reqUri);*/
 
-    let fullUrl = req.get('host') + reqUri;
+    /*let fullUrl = req.get('host') + reqUri;
     console.log('fullUrl: ',fullUrl);
     console.log('length ', encodeTest.length, fullUrl.length);
     console.log(fullUrl == encodeTest);
     console.log(typeof encodeTest, typeof fullUrl);
     //console.log("encodedFullUrl: ", encodeURI(fullUrl));
-    console.log('decodedFullUrl: ', decodeURI(fullUrl));
+    console.log('decodedFullUrl: ', decodeURI(fullUrl));*/
 
 
-    let tag1 = req.query.tag1;
+    const tag1 = req.query.tag1;
     const tag2 = req.query.tag2;
-    console.log('tag1: ', tag1);
-    console.log('tag2: ', tag2);
+    /*console.log('tag1: ', tag1);
+    console.log('tag2: ', tag2);*/
 
     //const tag1 = req.body.tag1;
     //const tag2 = req.body.tag2;
@@ -104,6 +105,15 @@ exports.getRecruits = async function (req, res) {
     const recruitListResult = await recruitProvider.retrieveRecruitList(userIdx, tag1, tag2);
     return res.send(response(baseResponse.SUCCESS, recruitListResult));
 };
+
+// 로그인 안했을 경우 채용페이지 조회
+exports.getRecruitsNogLogged = async function(req, res) {
+    const tag1 = req.query.tag1;
+    const tag2 = req.query.tag2;
+
+    const recruitListResult = await recruitProvider.retrieveRecruitNotLoggedList(tag1, tag2);
+    return res.send(response(baseResponse.SUCCESS, recruitListResult));
+}
 
 exports.getRecruitInfo = async function (req, res){
 

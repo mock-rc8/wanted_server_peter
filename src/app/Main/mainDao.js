@@ -1,4 +1,4 @@
-// 모든 유저 조회
+//
 async function selectMain(connection, tag) {
 
   let mainResultArray = [];

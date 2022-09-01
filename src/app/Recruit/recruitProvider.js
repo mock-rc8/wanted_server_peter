@@ -29,6 +29,16 @@ exports.retrieveRecruitList = async function (userIdx, tag1, tag2) {
     return recruitListResult;
 };
 
+// 로그인 안했을 경우 채용페이지 조회
+exports.retrieveRecruitNotLoggedList = async function(tag1, tag2){
+  const connection = await pool.getConnection(async (conn) => conn);
+  const recruitListResult = await recruitDao.selectRecruitNotLogged(connection, tag1, tag2);
+  connection.release();
+
+  return recruitListResult;
+
+}
+
 exports.retrieveRecruitInfoList = async function(recruitInfoPathVariable) {
   const connection = await pool.getConnection(async (conn) => conn);
   const recruitInfoResult = await recruitDao.selectRecruitInfo(connection, recruitInfoPathVariable);

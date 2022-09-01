@@ -22,5 +22,4 @@ module.exports = function(app){
 
     // 새 이력서 작성 API
     app.post('/app/resumes/:useridx/:resumeidx', resume.postResumeByUser);
-
 };

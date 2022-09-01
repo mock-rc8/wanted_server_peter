@@ -3,6 +3,7 @@ const userProvider = require("../../app/User/userProvider");
 const userService = require("../../app/User/userService");
 const baseResponse = require("../../../config/baseResponseStatus");
 const {response, errResponse} = require("../../../config/response");
+const secret = require("../../../config/secret");
 
 const regexEmail = require("regex-email");
 const {emit} = require("nodemon");
@@ -122,6 +123,10 @@ exports.login = async function (req, res) {
     return res.send(signInResponse);
 };
 
+exports.kakaoLogin = async function(req, res){
+
+
+}
 
 /**
  * API No. 5
@@ -130,7 +135,7 @@ exports.login = async function (req, res) {
  * path variable : userId
  * body : nickname
  */
-exports.patchUsers = async function (req, res) {
+/*exports.patchUsers = async function (req, res) {
 
     // jwt - userId, path variable :userId
 
@@ -147,7 +152,7 @@ exports.patchUsers = async function (req, res) {
         const editUserInfo = await userService.editUser(userId, nickname)
         return res.send(editUserInfo);
     }
-};
+};*/
 
 
 
