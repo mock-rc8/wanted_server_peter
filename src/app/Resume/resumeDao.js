@@ -67,17 +67,6 @@ async function selectresumeEmail(connection, email) {
   return emailRows;
 }
 
-// resumeId 회원 조회
-async function selectresumeId(connection, resumeId) {
-  const selectresumeIdQuery = `
-                 SELECT id, email, nickname 
-                 FROM resumeInfo 
-                 WHERE id = ?;
-                 `;
-  const [resumeRow] = await connection.query(selectresumeIdQuery, resumeId);
-  return resumeRow;
-}
-
 // 유저 생성
 async function insertresumeInfo(connection, insertresumeInfoParams) {
   const insertresumeInfoQuery = `
@@ -118,36 +107,10 @@ async function selectresumePassword(connection, selectresumePasswordParams) {
   return selectresumePasswordRow;
 }
 
-// 유저 계정 상태 체크 (jwt 생성 위해 id 값도 가져온다.)
-async function selectresumeAccount(connection, email) {
-  const selectresumeAccountQuery = `
-        SELECT status, id
-        FROM resumeInfo 
-        WHERE email = ?;`;
-  const selectresumeAccountRow = await connection.query(
-      selectresumeAccountQuery,
-      email
-  );
-  return selectresumeAccountRow[0];
-}
-
-async function updateresumeInfo(connection, id, nickname) {
-  const updateresumeQuery = `
-  UPDATE resumeInfo 
-  SET nickname = ?
-  WHERE id = ?;`;
-  const updateresumeRow = await connection.query(updateresumeQuery, [nickname, id]);
-  return updateresumeRow[0];
-}
-
-
 module.exports = {
   selectresume,
   selectresumeEmail,
-  selectresumeId,
   insertresumeInfo,
   selectresumePassword,
-  selectresumeAccount,
-  updateresumeInfo,
   selectResume,
 };

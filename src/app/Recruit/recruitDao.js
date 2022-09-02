@@ -167,15 +167,6 @@ async function selectRecruit(connection, userIdx, tag1, tag2){
     }
     selectRecruitRows.push(recruitRows);
 
-  //const [selectRecruitCompanyTag1Result] = await connection.query(selectTagRecruitQuery, tag1);
-  //console.log('[selectRecruitCompanyTag1Result]: ', selectRecruitCompanyTag1Result);
-  //const [selectRecruitCompanyTag2Result] = await connection.query(selectTagRecruitQuery, tag2);
-  //console.log('[selectRecruitCompanyTag2Result]: ', selectRecruitCompanyTag2Result);
-
-  //selectRecruitRows.push(selectRecruitCompanyTag1Result);
-  //selectRecruitRows.push(selectRecruitCompanyTag2Result);
-  //console.log('selectRecruitRows: ', selectRecruitRows);
-
   return selectRecruitRows;
 }
 

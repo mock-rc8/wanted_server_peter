@@ -77,60 +77,6 @@ exports.createresume = async function (name,
     }
 };
 
-
-// TODO: After 로그인 인증 방법 (JWT)
-exports.postSignIn = async function (email, password) {
-    try {
-        // 이메일 여부 확인
-        const emailRows = await resumeProvider.emailCheck(email);
-        if (emailRows.length < 1) return errResponse(baseResponse.SIGNIN_EMAIL_WRONG);
-
-        const selectEmail = emailRows[0].email
-
-        // 비밀번호 확인
-        const hashedPassword = await crypto
-            .createHash("sha512")
-            .update(password)
-            .digest("hex");
-
-        const selectresumePasswordParams = [selectEmail, hashedPassword];
-        const passwordRows = await resumeProvider.passwordCheck(selectresumePasswordParams);
-
-        if (passwordRows[0].password !== hashedPassword) {
-            return errResponse(baseResponse.SIGNIN_PASSWORD_WRONG);
-        }
-
-        // 계정 상태 확인
-        const resumeInfoRows = await resumeProvider.accountCheck(email);
-
-        if (resumeInfoRows[0].status === "INACTIVE") {
-            return errResponse(baseResponse.SIGNIN_INACTIVE_ACCOUNT);
-        } else if (resumeInfoRows[0].status === "DELETED") {
-            return errResponse(baseResponse.SIGNIN_WITHDRAWAL_ACCOUNT);
-        }
-
-        console.log(resumeInfoRows[0].id) // DB의 resumeId
-
-        //토큰 생성 Service
-        let token = await jwt.sign(
-            {
-                resumeId: resumeInfoRows[0].id,
-            }, // 토큰의 내용(payload)
-            secret_config.jwtsecret, // 비밀키
-            {
-                expiresIn: "365d",
-                subject: "resumeInfo",
-            } // 유효 기간 365일
-        );
-
-        return response(baseResponse.SUCCESS, {'resumeId': resumeInfoRows[0].id, 'jwt': token});
-
-    } catch (err) {
-        logger.error(`App - postSignIn Service error\n: ${err.message} \n${JSON.stringify(err)}`);
-        return errResponse(baseResponse.DB_ERROR);
-    }
-};
-
 exports.editresume = async function (id, nickname) {
     try {
         console.log(id)

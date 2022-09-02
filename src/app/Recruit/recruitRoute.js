@@ -3,19 +3,6 @@ module.exports = function(app){
     const recruit = require('./recruitController');
     const jwtMiddleware = require('../../../config/jwtMiddleware');
 
-    // 0. 테스트 API
-    app.get('/app/test', recruit.getTest)
-
-    // 1. 유저 생성 (회원가입) API
-    //app.post('/app/recruits', recruit.postrecruits);
-
-
-    // 2. 유저 조회 API (+ 검색)
-    //app.get('/app/recruits',recruit.getrecruits);
-
-    // 3. 특정 유저 조회 API
-    // app.get('/app/recruits/:recruitId', recruit.getrecruitById);
-
     // 채용 페이지 조회(로그인했을 경우) API
     app.get('/app/recruits/:useridx', recruit.getRecruits);
 

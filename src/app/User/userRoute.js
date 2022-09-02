@@ -9,14 +9,6 @@ module.exports = function(app){
     // 1. 유저 생성 (회원가입) API
     app.post('/app/users', user.postUsers);
 
-
-    // 2. 유저 조회 API (+ 검색)
-    //app.get('/app/users',user.getUsers);
-
-    // 3. 특정 유저 조회 API
-    // app.get('/app/users/:userId', user.getUserById);
-
-
     // TODO: After 로그인 인증 방법 (JWT)
     // 로그인 하기 API (JWT 생성)
     app.post('/app/login', user.login);
@@ -27,13 +19,4 @@ module.exports = function(app){
     // 카카오 소셜 로그인
     //app.post('/app/kakao-login', user.kakaoLogin);
 
-
-
 };
-
-
-// TODO: 자동로그인 API (JWT 검증 및 Payload 내뱉기)
-// JWT 검증 API
-// app.get('/app/auto-login', jwtMiddleware, user.check);
-
-// TODO: 탈퇴하기 API

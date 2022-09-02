@@ -30,29 +30,3 @@ exports.retrieveEvent = async function (tag1, tag2) {
 
   return eventResult[0];
 };
-
-exports.emailCheck = async function (email) {
-  const connection = await pool.getConnection(async (conn) => conn);
-  const emailCheckResult = await eventDao.selecteventEmail(connection, email);
-  connection.release();
-
-  return emailCheckResult;
-};
-
-exports.passwordCheck = async function (selecteventPasswordParams) {
-  const connection = await pool.getConnection(async (conn) => conn);
-  const passwordCheckResult = await eventDao.selecteventPassword(
-      connection,
-      selecteventPasswordParams
-  );
-  connection.release();
-  return passwordCheckResult[0];
-};
-
-exports.accountCheck = async function (email) {
-  const connection = await pool.getConnection(async (conn) => conn);
-  const eventAccountResult = await eventDao.selecteventAccount(connection, email);
-  connection.release();
-
-  return eventAccountResult;
-};

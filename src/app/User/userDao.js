@@ -92,7 +92,6 @@ async function updateUserInfo(connection, id, nickname) {
   return updateUserRow[0];
 }
 
-
 module.exports = {
   selectUser,
   selectUserEmail,

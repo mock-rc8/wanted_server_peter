@@ -60,7 +60,6 @@ exports.createUser = async function (name,
         connection.release();
         return response(baseResponse.SUCCESS);
 
-
     } catch (err) {
         logger.error(`App - createUser Service error\n: ${err.message}`);
         return errResponse(baseResponse.DB_ERROR);
@@ -92,15 +91,11 @@ exports.postSignIn = async function (email, password) {
 
         // 계정 상태 확인
         const userInfoRows = await userProvider.accountCheck(email);
-
-        /*if (userInfoRows[0].status === "inactive") {
-            return errResponse(baseResponse.SIGNIN_INACTIVE_ACCOUNT);
-        } */
         if (userInfoRows[0].status === "inactive") {
             return errResponse(baseResponse.SIGNIN_WITHDRAWAL_ACCOUNT);
         }
 
-        console.log(userInfoRows[0].email) // DB의 email
+        //console.log(userInfoRows[0].email) // DB의 email
 
         //토큰 생성 Service
         let token = await jwt.sign(
@@ -113,7 +108,7 @@ exports.postSignIn = async function (email, password) {
                 subject: "userInfo",
             } // 유효 기간 365일
         );
-        console.log('typeof token: ', typeof token);
+        //console.log('typeof token: ', typeof token);
         return response(baseResponse.SUCCESS, {'userId': userInfoRows[0].email, 'jwt': token});
     } catch (err) {
         logger.error(`App - postSignIn Service error\n: ${err.message} \n${JSON.stringify(err)}`);
@@ -123,7 +118,7 @@ exports.postSignIn = async function (email, password) {
 
 exports.editUser = async function (id, nickname) {
     try {
-        console.log(id)
+        //console.log(id)
         const connection = await pool.getConnection(async (conn) => conn);
         const editUserResult = await userDao.updateUserInfo(connection, id, nickname)
         connection.release();

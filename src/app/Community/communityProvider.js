@@ -38,29 +38,3 @@ exports.retrievecommunity = async function (communityId) {
 
   return communityResult[0];
 };
-
-exports.emailCheck = async function (email) {
-  const connection = await pool.getConnection(async (conn) => conn);
-  const emailCheckResult = await communityDao.selectcommunityEmail(connection, email);
-  connection.release();
-
-  return emailCheckResult;
-};
-
-exports.passwordCheck = async function (selectcommunityPasswordParams) {
-  const connection = await pool.getConnection(async (conn) => conn);
-  const passwordCheckResult = await communityDao.selectcommunityPassword(
-      connection,
-      selectcommunityPasswordParams
-  );
-  connection.release();
-  return passwordCheckResult[0];
-};
-
-exports.accountCheck = async function (email) {
-  const connection = await pool.getConnection(async (conn) => conn);
-  const communityAccountResult = await communityDao.selectcommunityAccount(connection, email);
-  connection.release();
-
-  return communityAccountResult;
-};
