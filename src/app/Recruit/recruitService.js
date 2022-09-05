@@ -73,7 +73,7 @@ exports.patchRecruitBookmark = async function(userIdx, recruitIdx) {
     const connection = await pool.getConnection(async (conn) => conn);
 
     //const recruitBookmarkResult =
-        await recruitDao.updateRecruitBookmark(connection, userIdx, recruitIdx);
+    await recruitDao.updateRecruitBookmark(connection, userIdx, recruitIdx);
     connection.release();
     return response(baseResponse.SUCCESS);
 

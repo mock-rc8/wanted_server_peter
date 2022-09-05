@@ -3,33 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ea7d5fcd-88aa-4335-ac72-c2db843d3046" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Event/eventController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Event/eventController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Event/eventDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Event/eventDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Event/eventProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Event/eventProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Event/eventRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Event/eventRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main/mainController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main/mainController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main/mainDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main/mainDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main/mainProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main/mainProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main/mainRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main/mainRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main/mainService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main/mainService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" beforeDir="false" afterPath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2022-08-20-smart-push.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitProvider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/User/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/User/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/User/userDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/User/userDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/User/userProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/User/userProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/User/userRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/User/userRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/User/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/User/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,20 +26,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "last_opened_file_path": "/Users/macbookpro/Desktop/wanted_server_peter/src/app/Community",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/macbookpro/Desktop/wanted_server_peter/src/app/Community&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/Community" />
@@ -102,7 +81,9 @@
       <workItem from="1661829120840" duration="2171000" />
       <workItem from="1661863858253" duration="8670000" />
       <workItem from="1661922892497" duration="12520000" />
-      <workItem from="1661994055993" duration="33468000" />
+      <workItem from="1661994055993" duration="34070000" />
+      <workItem from="1662360695450" duration="606000" />
+      <workItem from="1662407872151" duration="2107000" />
     </task>
     <servers />
   </component>

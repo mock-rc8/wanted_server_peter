@@ -233,14 +233,8 @@ async function selectRecruitInfo(connection, recruitInfoPathVariable) {
 
 async function updateRecruitBookmark(connection, userIdx, recruitIdx) {
   // RecruitBookmark 테이블에 데이터 있는지 여부 확인
-  const isFirstBookmarkQuery = `
-  SELECT
-      CASE
-          WHEN userIdx IS NULL AND recruitIdx IS NULL THEN "Y"
-          ELSE "N"
-      END as isFirst
-  FROM RecruitBookmark
-  WHERE userIdx = ? AND recruitIdx = ?; 
+  const isFirstBookmarkQuery = ` 
+    SELECT EXISTS (SELECT recruitBookmarkIdx FROM RecruitBookmark WHERE userIdx = ? AND recruitIdx = ? ) as isExist;
   `;
 
   // RecruitBookmark 테이블에 처음 추가될 경우
@@ -259,7 +253,7 @@ async function updateRecruitBookmark(connection, userIdx, recruitIdx) {
   console.log('recruitIdx: ', recruitIdx);
   const isFirstBookmarkResult = await connection.query(isFirstBookmarkQuery, recruitBookmarkParams); // 에러 구간
   console.log('isFirstBookmarkResult: ', isFirstBookmarkResult);
-  if(isFirstBookmarkResult[0][0].isFirst == 'Y'){
+  if(isFirstBookmarkResult[0][0].isExist == 0){
     //const RecruitBookmarkResult =
         await connection.query(insertRecruitBookmarkQuery, recruitBookmarkParams);
   } else {
