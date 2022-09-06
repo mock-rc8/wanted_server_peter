@@ -38,89 +38,11 @@ exports.postResumeByUser = async function (req, res) {
     return res.send(response(postResumeResult));
 }
 
-/**
- * API No. 0
- * API Name : 테스트 API
- * [GET] /app/test
- */
-exports.getTest = async function (req, res) {
-
-    return res.send(response(baseResponse.SUCCESS))
+exports.postResumeCareer = async function(req, res) {
+    const resumeIdx = req.params.resumeidx;
+    const {careerStart, careerEnd, company, workType, department, duty, isCurrent} = req.body;
+    const postResumeCareerParams = [resumeIdx, careerStart, careerEnd, company, workType, department, duty, isCurrent];
+    const postResumeCareerResult = await resumeService.postResumeCareer(postResumeCareerParams)
+    return res.send(response(postResumeCareerResult));
 }
 
-/**
- * [POST] /app/resumes
- */
-exports.postresumes = async function (req, res) {
-
-    /**
-     * Body: name, phone, email, jobGroupIdx, jobIdx, career, skill, university, company empathy, interest, trend
-     */
-    const {name, phone, email, password, jobGroupIdx, jobIdx, career, skill, university, company, empathy, interest, trend} = req.body;
-
-    // 빈 값 체크
-    if (!email)
-        return res.send(response(baseResponse.SIGNUP_EMAIL_EMPTY));
-
-    // 길이 체크
-    if (email.length > 30)
-        return res.send(response(baseResponse.SIGNUP_EMAIL_LENGTH));
-
-    // 형식 체크 (by 정규표현식)
-    if (!regexEmail.test(email))
-        return res.send(response(baseResponse.SIGNUP_EMAIL_ERROR_TYPE));
-
-    // 기타 등등 - 추가하기
-
-    const signUpResponse = await resumeService.createresume(
-        name,
-        phone,
-        email,
-        password,
-        jobGroupIdx,
-        jobIdx,
-        career,
-        skill,
-        university,
-        company,
-        empathy,
-        interest,
-        trend
-    );
-
-    return res.send(signUpResponse);
-};
-
-/**
- * [GET] /app/resumes
- */
-exports.getresumes = async function (req, res) {
-
-    /**
-     * Query String: email
-     */
-    const email = req.query.email;
-
-    if (!email) {
-        // 유저 전체 조회
-        const resumeListResult = await resumeProvider.retrieveresumeList();
-        return res.send(response(baseResponse.SUCCESS, resumeListResult));
-    } else {
-        // 유저 검색 조회
-        const resumeListByEmail = await resumeProvider.retrieveresumeList(email);
-        return res.send(response(baseResponse.SUCCESS, resumeListByEmail));
-    }
-};
-
-exports.getresumeById = async function (req, res) {
-
-    /**
-     * Path Variable: resumeId
-     */
-    const resumeId = req.params.resumeId;
-
-    if (!resumeId) return res.send(errResponse(baseResponse.resume_resumeID_EMPTY));
-
-    const resumeByresumeId = await resumeProvider.retrieveresume(resumeId);
-    return res.send(response(baseResponse.SUCCESS, resumeByresumeId));
-};

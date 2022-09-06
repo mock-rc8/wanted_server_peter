@@ -8,4 +8,8 @@ module.exports = function(app){
 
     // 새 이력서 생성 API
     app.post('/app/resumes/:useridx', resume.postResumeByUser);
+
+    // 회원 이력서 경력 추가 API
+    app.post('/app/resumes/career/:resumeidx', resume.postResumeCareer);
+
 };

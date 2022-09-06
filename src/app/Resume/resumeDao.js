@@ -50,20 +50,30 @@ async function selectResume(connection, userIdx) {
 
 // 이력서 생성
 async function postResumeInfo(connection, postResumeParams) {
-  const insertresumeInfoQuery = `
+  const insertResumeInfoQuery = `
     INSERT INTO Resume(userIdx, title, name, email, phone, aboutMe, skill) 
     VALUES(?, ?, ?, ?, ?, ?, ?);
     `;
   await connection.query(
-    insertresumeInfoQuery,
+    insertResumeInfoQuery,
     postResumeParams
   );
 
   return;
 }
 
+// 이력서 경력 생성
+async function insertResumeCareer(connection, postResumeCareerParams) {
+  const insertResumeCareerQuery = `
+    INSERT INTO ResumeCareer(resumeIdx, careerStart, careerEnd, company, workType, department, duty, isCurrent) VALUES
+    (?, ?, ?, ?, ?, ?, ?, ?);
+  `;
+  await connection.query(insertResumeCareerQuery, postResumeCareerParams);
+  return;
+}
 
 module.exports = {
   selectResume,
   postResumeInfo,
+  insertResumeCareer,
 };

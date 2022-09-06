@@ -75,17 +75,10 @@ exports.createresume = async function (name,
     }
 };
 
-exports.editresume = async function (id, nickname) {
-    try {
-        console.log(id)
-        const connection = await pool.getConnection(async (conn) => conn);
-        const editresumeResult = await resumeDao.updateresumeInfo(connection, id, nickname)
-        connection.release();
-
-        return response(baseResponse.SUCCESS);
-
-    } catch (err) {
-        logger.error(`App - editresume Service error\n: ${err.message}`);
-        return errResponse(baseResponse.DB_ERROR);
-    }
+exports.postResumeCareer = async function(postResumeCareerParams){
+    const connection = await pool.getConnection(async (conn) => conn);
+    await resumeDao.insertResumeCareer(connection, postResumeCareerParams);
+    connection.release();
+    return response(baseResponse.SUCCESS);
 }
+
