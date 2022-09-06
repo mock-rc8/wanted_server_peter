@@ -27,4 +27,8 @@ module.exports = function(app){
     // 회원 이력서 외국어 추가 API
     app.post('/app/resumes/langs/:resumeidx', resume.postResumeLang);
 
+    // 회원 이력서 외국어 - 어학시험  추가 API
+    app.post('/app/resumes/langtests/:resumelangidx', resume.postResumeLangtest);
+
+    
 };

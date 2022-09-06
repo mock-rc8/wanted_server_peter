@@ -93,3 +93,11 @@ exports.postResumeLang = async function(req, res) {
     const postResumeLangResult = await resumeService.postResumeLang(resumeLangParams);
     return res.send(response(postResumeLangResult));
 }
+
+exports.postResumeLangtest = async function(req, res){
+    const resumeLangIdx = req.params.resumelangidx;
+    const {testName, score, testDate} = req.body;
+    const resumeLangTestParams = [resumeLangIdx, testName, score, testDate];
+    const postResumeLangTestResult = await resumeService.postResumeLangTest(resumeLangTestParams);
+    return res.send(response(postResumeLangTestResult));
+}

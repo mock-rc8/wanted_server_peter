@@ -116,3 +116,10 @@ exports.postResumeLang = async function(resumeLangParams) {
     connection.release();
     return response(baseResponse.SUCCESS);
 }
+
+exports.postResumeLangTest = async function(resumeLangTestParams) {
+    const connection = await pool.getConnection(async (conn) => conn);
+    await resumeDao.insertResumeLangTest(connection, resumeLangTestParams);
+    connection.release();
+    return response(baseResponse.SUCCESS);
+}
