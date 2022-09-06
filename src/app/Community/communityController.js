@@ -86,3 +86,13 @@ exports.patchCommentDelete = async function(req, res){
     const patchCommentDeleteResult = await communityService.patchCommentDelete(commentIdx);
     return res.send(patchCommentDeleteResult);
 }
+
+/**
+ * 커뮤니티 글 좋아요 API
+ */
+exports.patchCommunityLike = async function(req, res){
+    const communityIdx = req.params.communityidx;
+    const userIdx = req.params.useridx;
+    const patchCommunityLikeResult = await communityService.patchCommunityLike(communityIdx, userIdx);
+    return res.send(patchCommunityLikeResult);
+}

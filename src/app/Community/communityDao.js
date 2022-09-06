@@ -100,6 +100,39 @@ WHERE commentIdx = ?;
   return updateCommentStatusResult;
 }
 
+async function patchCommunityLike(connection, communityIdx, userIdx) {
+
+  // 쿼리문에 들어갈 인수
+  const patchCommunityLikeParams = [Number(communityIdx), Number(userIdx)];
+
+  // CommunityLike 테이블 데이터 존재여부 확인
+  const isFirstCommunityLikeQuery = `
+      SELECT EXISTS (SELECT communityLikeIdx FROM CommunityLike WHERE communityIdx = ? AND userIdx = ?) as isFirst;
+  `;
+
+  // CommunityLike 테이블에 데이터가 없을 경우. 데이터 삽입 쿼리
+  const insertCommunityLikeQuery = `
+    INSERT INTO CommunityLike(communityIdx, userIdx) VALUES(?, ?);
+  `;
+
+  // CommunityLike 테이블에 데이터가 있을 경우. 업데이트
+  const updateCommunityLikeQuery = ` 
+    UPDATE CommunityLike SET status= if(status = 'active' ,'inactive', 'active')
+    WHERE communityIdx = ? AND userIdx = ?;
+  `;
+
+  const isFirstCommunityLikeResult = await connection.query(isFirstCommunityLikeQuery, patchCommunityLikeParams);
+
+  if(isFirstCommunityLikeResult[0][0].isFirst == 0) {  // CommunityLike 테이블에 데이터가 없는 경우. 바로 insert 데이터 삽입
+    await connection.query(insertCommunityLikeQuery, patchCommunityLikeParams);
+
+  }else{ // CommunityLike 테이블에 데이터가 있는 경우.
+    await connection.query(updateCommunityLikeQuery, patchCommunityLikeParams);
+  }
+
+  return;
+}
+
 module.exports = {
   selectCommunity,
   insertCommunityInfo,
@@ -108,4 +141,5 @@ module.exports = {
   insertComment,
   updateComment,
   updateCommentStatus,
+  patchCommunityLike,
 };

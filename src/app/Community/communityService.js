@@ -61,3 +61,12 @@ exports.patchCommentDelete = async function(commentIdx) {
     connection.release();
     return response(baseResponse.SUCCESS, patchCommentDeleteResult);
 }
+
+// 커뮤니티 글 좋아요 API
+exports.patchCommunityLike = async function(communityIdx, userIdx) {
+    const connection = await pool.getConnection(async (conn) => conn);
+
+    const patchCommunityLikeResult = await communityDao.patchCommunityLike(connection, communityIdx, userIdx);
+    connection.release();
+    return response(baseResponse.SUCCESS, patchCommunityLikeResult);
+}

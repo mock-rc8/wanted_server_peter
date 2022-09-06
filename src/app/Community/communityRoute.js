@@ -24,4 +24,7 @@ module.exports = function(app){
     // 커뮤니티 댓글 삭제 API
     app.patch('/app/communities/:commentidx/delete', community.patchCommentDelete);
 
+    // 커뮤니티 좋아요 API
+    app.patch('/app/communities/:communityidx/:useridx/likes', community.patchCommunityLike);
+
 };

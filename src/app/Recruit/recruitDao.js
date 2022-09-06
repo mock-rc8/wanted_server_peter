@@ -261,6 +261,7 @@ async function updateRecruitBookmark(connection, userIdx, recruitIdx) {
         await connection.query(updateRecruitBookmarkQuery, recruitBookmarkParams);
   }
 
+  return;
 }
 
 module.exports = {

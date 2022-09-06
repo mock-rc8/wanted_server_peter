@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ea7d5fcd-88aa-4335-ac72-c2db843d3046" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" beforeDir="false" afterPath="$PROJECT_DIR$/log/.6c1a1f7b9023a40cab0375214d702bb453b1bc33-audit.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2022-08-20-smart-push.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Community/communityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Community/communityDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Community/communityRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Community/communityService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +82,7 @@
       <workItem from="1661922892497" duration="12520000" />
       <workItem from="1661994055993" duration="34070000" />
       <workItem from="1662360695450" duration="606000" />
-      <workItem from="1662407872151" duration="2107000" />
+      <workItem from="1662407872151" duration="9688000" />
     </task>
     <servers />
   </component>
