@@ -110,6 +110,15 @@ async function insertResumePrize(connection, resumePrizeParams) {
   return;
 }
 
+async function insertResumeLang(connection, resumeLangParams) {
+  const insertResumeLangQuery = `
+    INSERT INTO ResumeLanguage(resumeIdx, language, class) VALUES
+    (?, ?, ?);
+  `;
+  await connection.query(insertResumeLangQuery, resumeLangParams);
+  return;
+}
+
 module.exports = {
   selectResume,
   postResumeInfo,
@@ -118,4 +127,5 @@ module.exports = {
   insertResumeEducation,
   insertResumeSkill,
   insertResumePrize,
+  insertResumeLang,
 };

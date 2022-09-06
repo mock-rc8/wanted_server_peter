@@ -78,3 +78,18 @@ exports.postResumePrize = async function(req, res){
     return res.send(response(postResumePrizeResult));
 }
 
+exports.postResumeLang = async function(req, res) {
+    const resumeIdx = req.params.resumeidx;
+    const {prizeDate, activityName, activityDetail} = req.body;
+    const resumePrizeParams = [resumeIdx, prizeDate, activityName, activityDetail];
+    const postResumePrizeResult = await resumeService.postResumePrize(resumePrizeParams);
+    return res.send(response(postResumePrizeResult));
+}
+
+exports.postResumeLang = async function(req, res) {
+    const resumeIdx = req.params.resumeidx;
+    const {language, clas} = req.body;
+    const resumeLangParams = [resumeIdx, language, clas];
+    const postResumeLangResult = await resumeService.postResumeLang(resumeLangParams);
+    return res.send(response(postResumeLangResult));
+}

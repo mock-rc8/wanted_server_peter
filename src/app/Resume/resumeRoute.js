@@ -23,6 +23,8 @@ module.exports = function(app){
 
     // 회원 이력서 수상 추가 API
     app.post('/app/resumes/prizes/:resumeidx', resume.postResumePrize);
-    
+
+    // 회원 이력서 외국어 추가 API
+    app.post('/app/resumes/langs/:resumeidx', resume.postResumeLang);
 
 };

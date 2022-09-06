@@ -109,3 +109,10 @@ exports.postResumePrize = async function(resumePrizeParams) {
     connection.release();
     return response(baseResponse.SUCCESS);
 }
+
+exports.postResumeLang = async function(resumeLangParams) {
+    const connection = await pool.getConnection(async (conn) => conn);
+    await resumeDao.insertResumeLang(connection, resumeLangParams);
+    connection.release();
+    return response(baseResponse.SUCCESS);
+}
