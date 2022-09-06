@@ -15,4 +15,8 @@ module.exports = function(app){
     // 회원 이력서 경력 - 성과 추가 API
     app.post('/app/resumes/performance/:resumecareeridx', resume.postCareerPerformance);
 
+    // 회원 이력서 학력 추가 API
+    app.post('/app/resumes/education/:resumeidx', resume.postResumeEducation);
+
+
 };

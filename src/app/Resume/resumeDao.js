@@ -82,9 +82,20 @@ async function insertResumeCareerPerformance(connection, careerPerformanceParams
   return;
 }
 
+// 이력서 학력 생성
+async function insertResumeEducation(connection, careerPerformanceParams) {
+  const insertResumeEducationQuery = `
+    INSERT INTO ResumeEducation(resumeIdx, educationStart, educationEnd, school, major, finishClass, isCurrent) VALUES
+      (?, ?, ?, ?, ?, ?, ?);
+  `;
+  await connection.query(insertResumeEducationQuery, careerPerformanceParams);
+  return;
+}
+
 module.exports = {
   selectResume,
   postResumeInfo,
   insertResumeCareer,
   insertResumeCareerPerformance,
+  insertResumeEducation,
 };

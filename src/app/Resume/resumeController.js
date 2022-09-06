@@ -53,3 +53,12 @@ exports.postCareerPerformance = async function(req, res) {
     const postCareerPerformanceResult = await resumeService.postResumeCareerPerformance(careerPerformanceParams);
     return res.send(response(postCareerPerformanceResult));
 }
+
+exports.postResumeEducation = async function(req, res) {
+    const resumeIdx = req.params.resumeidx;
+    const {educationStart, educationEnd, school, major, finishClass, isCurrent} = req.body;
+    const resumeEducationParams = [resumeIdx, educationStart, educationEnd, school, major, finishClass, isCurrent];
+    const postResumeEducationResult = await resumeService.postResumeEducation(resumeEducationParams);
+    return res.send(response(postResumeEducationResult));
+
+}
