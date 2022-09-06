@@ -128,6 +128,15 @@ async function insertResumeLangTest(connection, resumeLangTestParams) {
   return;
 }
 
+async function insertResumeLink(connection, resumeLinkParams){
+  const insertResumeLinkQuery = `
+    INSERT INTO ResumeLink(resumeIdx, link) VALUES
+      (?, ?);
+  `;
+  await connection.query(insertResumeLinkQuery, resumeLinkParams);
+  return;
+}
+
 module.exports = {
   selectResume,
   postResumeInfo,
@@ -138,4 +147,5 @@ module.exports = {
   insertResumePrize,
   insertResumeLang,
   insertResumeLangTest,
+  insertResumeLink,
 };
