@@ -6,6 +6,6 @@ module.exports = function(app){
     // 이력서 페이지 조회 API
     app.get('/app/resumes/:useridx', resume.getResumeByUser);
 
-    // 새 이력서 작성 API
-    app.post('/app/resumes/:useridx/:resumeidx', resume.postResumeByUser);
+    // 새 이력서 생성 API
+    app.post('/app/resumes/:useridx', resume.postResumeByUser);
 };

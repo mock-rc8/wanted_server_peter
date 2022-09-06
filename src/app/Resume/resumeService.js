@@ -13,13 +13,11 @@ const {connect} = require("http2");
 
 // Service: Create, Update, Delete 비즈니스 로직 처리
 
-exports.postResume = async function(userIdx){
+// 이력서 생성
+exports.postResume = async function(postResumeParams){
     const connection = await pool.getConnection(async (conn) => conn);
-
-    const postResumeResult = await resumeDao.insertResumeInfo(connection, insertresumeInfoParams);
+    const postResumeResult = await resumeDao.postResumeInfo(connection, postResumeParams);
     connection.release();
-
-
     return response(baseResponse.SUCCESS);
 }
 

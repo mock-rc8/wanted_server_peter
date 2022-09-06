@@ -1,3 +1,4 @@
+// 이력서 조회
 async function selectResume(connection, userIdx) {
   // 회원 이력서인덱스 추출
   const selectResumeIdxQuery = `
@@ -46,71 +47,23 @@ async function selectResume(connection, userIdx) {
   return selectResumeList[0];
 }
 
-// 모든 유저 조회
-async function selectresume(connection) {
-  const selectresumeListQuery = `
-                SELECT email, name 
-                FROM resume;
-                `;
-  const [resumeRows] = await connection.query(selectresumeListQuery);
-  return resumeRows;
-}
 
-// 이메일로 회원 조회
-async function selectresumeEmail(connection, email) {
-  const selectresumeEmailQuery = `
-                SELECT email, name 
-                FROM resume 
-                WHERE email = ?;
-                `;
-  const [emailRows] = await connection.query(selectresumeEmailQuery, email);
-  return emailRows;
-}
-
-// 유저 생성
-async function insertresumeInfo(connection, insertresumeInfoParams) {
+// 이력서 생성
+async function postResumeInfo(connection, postResumeParams) {
   const insertresumeInfoQuery = `
-        INSERT INTO resume(name,
-                         phone,
-                         email,
-                         password,
-                         jobGroupIdx,
-                         jobIdx,
-                         career,
-                         skill,
-                         university,
-                         company,
-                         empathy,
-                         interest,
-                         trend)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    INSERT INTO Resume(userIdx, title, name, email, phone, aboutMe, skill) 
+    VALUES(?, ?, ?, ?, ?, ?, ?);
     `;
-  const insertresumeInfoRow = await connection.query(
+  await connection.query(
     insertresumeInfoQuery,
-    insertresumeInfoParams
+    postResumeParams
   );
 
-  return insertresumeInfoRow;
+  return;
 }
 
-// 패스워드 체크
-async function selectresumePassword(connection, selectresumePasswordParams) {
-  const selectresumePasswordQuery = `
-        SELECT email, nickname, password
-        FROM resumeInfo 
-        WHERE email = ? AND password = ?;`;
-  const selectresumePasswordRow = await connection.query(
-      selectresumePasswordQuery,
-      selectresumePasswordParams
-  );
-
-  return selectresumePasswordRow;
-}
 
 module.exports = {
-  selectresume,
-  selectresumeEmail,
-  insertresumeInfo,
-  selectresumePassword,
   selectResume,
+  postResumeInfo,
 };

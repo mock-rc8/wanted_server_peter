@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ea7d5fcd-88aa-4335-ac72-c2db843d3046" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Community/communityService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Community/communityService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Recruit/recruitDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Recruit/recruitDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,7 @@
       <workItem from="1661922892497" duration="12520000" />
       <workItem from="1661994055993" duration="34070000" />
       <workItem from="1662360695450" duration="606000" />
-      <workItem from="1662407872151" duration="9688000" />
+      <workItem from="1662407872151" duration="12726000" />
     </task>
     <servers />
   </component>

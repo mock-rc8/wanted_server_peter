@@ -17,11 +17,11 @@ exports.getResumeByUser = async function (req, res) {
     return res.send(response(baseResponse.SUCCESS, resumeUserResult));
 }
 
+// 이력서 생성
 exports.postResumeByUser = async function (req, res) {
     const userIdx = req.params.useridx;
-    const resumeIdx = req.params.resumeidx;
 
-    const {title, name, email, phone, aboutMe, skill,  // Resume
+    /*const {title, name, email, phone, aboutMe, skill,  // Resume
         careerStart, careerEnd, company, workType, department, duty, careerIsCurrent, // ResumeCareer
         performance, performanceStart, performanceEnd, content, // ResumePerformance
         educationStart, educationEnd, school, major, finishClass, eduIsCurrent, // ResumeEducation
@@ -29,10 +29,13 @@ exports.postResumeByUser = async function (req, res) {
         language, langClass, // ResumeLanguage
         testName, score, testDate, // ResumeLangTest
         link // ResumeLink
-    } = req.body;
+    } = req.body;*/
 
-    const postResumeResult = await resumeService.postResume(userIdx);
-    return res.send(response(baseResponse.SUCCESS, postResumeResult));
+    const {title, name, email, phone, aboutMe, skill} = req.body;
+    const postResumeParams = [userIdx, title, name, email, phone, aboutMe, skill];
+
+    const postResumeResult = await resumeService.postResume(postResumeParams);
+    return res.send(response(postResumeResult));
 }
 
 /**
