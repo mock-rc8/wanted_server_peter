@@ -60,5 +60,21 @@ exports.postResumeEducation = async function(req, res) {
     const resumeEducationParams = [resumeIdx, educationStart, educationEnd, school, major, finishClass, isCurrent];
     const postResumeEducationResult = await resumeService.postResumeEducation(resumeEducationParams);
     return res.send(response(postResumeEducationResult));
-
 }
+
+exports.postResumeSkill = async function(req, res){
+    const resumeIdx = req.params.resumeidx;
+    const skill = req.body;
+    const resumeSkillParams = [resumeIdx, skill];
+    const postResumeSkillResult = await resumeService.postResumeSkill(resumeSkillParams);
+    return res.send(response(postResumeSkillResult));
+}
+
+exports.postResumePrize = async function(req, res){
+    const resumeIdx = req.params.resumeidx;
+    const {prizeDate, activityName, activityDetail} = req.body;
+    const resumePrizeParams = [resumeIdx, prizeDate, activityName, activityDetail];
+    const postResumePrizeResult = await resumeService.postResumePrize(resumePrizeParams);
+    return res.send(response(postResumePrizeResult));
+}
+

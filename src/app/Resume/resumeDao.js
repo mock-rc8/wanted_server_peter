@@ -92,10 +92,30 @@ async function insertResumeEducation(connection, careerPerformanceParams) {
   return;
 }
 
+async function insertResumeSkill(connection, resumeSkillParams) {
+  const insertResumeSkillQuery = `
+    INSERT INTO ResumeSkill(resumeIdx, skill) VALUES
+    (?, ?);
+  `;
+  await connection.query(insertResumeSkillQuery, resumeSkillParams);
+  return;
+}
+
+async function insertResumePrize(connection, resumePrizeParams) {
+  const insertResumePrizeQuery = `
+    INSERT INTO ResumePrize(resumeIdx, prizeDate, activityName, activityDetail) VALUES
+    (?, ?, ?, ?);
+  `;
+  await connection.query(insertResumePrizeQuery, resumePrizeParams);
+  return;
+}
+
 module.exports = {
   selectResume,
   postResumeInfo,
   insertResumeCareer,
   insertResumeCareerPerformance,
   insertResumeEducation,
+  insertResumeSkill,
+  insertResumePrize,
 };

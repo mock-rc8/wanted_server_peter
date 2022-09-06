@@ -95,3 +95,17 @@ exports.postResumeEducation = async function(resumeEducationParams) {
     connection.release();
     return response(baseResponse.SUCCESS);
 }
+
+exports.postResumeSkill = async function(resumeSkillParams) {
+    const connection = await pool.getConnection(async (conn) => conn);
+    await resumeDao.insertResumeSkill(connection, resumeSkillParams);
+    connection.release();
+    return response(baseResponse.SUCCESS);
+}
+
+exports.postResumePrize = async function(resumePrizeParams) {
+    const connection = await pool.getConnection(async (conn) => conn);
+    await resumeDao.insertResumePrize(connection, resumePrizeParams);
+    connection.release();
+    return response(baseResponse.SUCCESS);
+}

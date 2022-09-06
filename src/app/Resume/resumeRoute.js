@@ -18,5 +18,11 @@ module.exports = function(app){
     // 회원 이력서 학력 추가 API
     app.post('/app/resumes/education/:resumeidx', resume.postResumeEducation);
 
+    // 회원 이력서 스킬 추가 API
+    app.post('/app/resumes/skills/:resumeidx', resume.postResumeSkill);
+
+    // 회원 이력서 수상 추가 API
+    app.post('/app/resumes/prizes/:resumeidx', resume.postResumePrize);
+    
 
 };
