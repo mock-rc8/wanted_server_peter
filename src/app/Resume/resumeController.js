@@ -46,3 +46,10 @@ exports.postResumeCareer = async function(req, res) {
     return res.send(response(postResumeCareerResult));
 }
 
+exports.postCareerPerformance = async function(req, res) {
+    const resumeCareerIdx = req.params.resumecareeridx;
+    const {performance, performanceStart, performanceEnd, content} = req.body;
+    const careerPerformanceParams = [resumeCareerIdx, performance, performanceStart, performanceEnd, content];
+    const postCareerPerformanceResult = await resumeService.postResumeCareerPerformance(careerPerformanceParams);
+    return res.send(response(postCareerPerformanceResult));
+}

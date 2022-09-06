@@ -12,4 +12,7 @@ module.exports = function(app){
     // 회원 이력서 경력 추가 API
     app.post('/app/resumes/career/:resumeidx', resume.postResumeCareer);
 
+    // 회원 이력서 경력 - 성과 추가 API
+    app.post('/app/resumes/performance/:resumecareeridx', resume.postCareerPerformance);
+
 };

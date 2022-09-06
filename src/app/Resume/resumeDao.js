@@ -72,8 +72,19 @@ async function insertResumeCareer(connection, postResumeCareerParams) {
   return;
 }
 
+// 이력서 경력 - 주요성과 생성
+async function insertResumeCareerPerformance(connection, careerPerformanceParams) {
+  const insertCareerPerformaQuery = ` 
+    INSERT INTO ResumePerformance(resumeCareerIdx, performance, performanceStart, performanceEnd, content) VALUES
+    (?, ?, ?, ?, ?);
+  `;
+  await connection.query(insertCareerPerformaQuery, careerPerformanceParams);
+  return;
+}
+
 module.exports = {
   selectResume,
   postResumeInfo,
   insertResumeCareer,
+  insertResumeCareerPerformance,
 };

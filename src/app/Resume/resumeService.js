@@ -82,3 +82,9 @@ exports.postResumeCareer = async function(postResumeCareerParams){
     return response(baseResponse.SUCCESS);
 }
 
+exports.postResumeCareerPerformance = async function(careerPerformanceParams){
+    const connection = await pool.getConnection(async (conn) => conn);
+    await resumeDao.insertResumeCareerPerformance(connection, careerPerformanceParams);
+    connection.release();
+    return response(baseResponse.SUCCESS);
+}
