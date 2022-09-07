@@ -4,10 +4,6 @@
     <list default="true" id="ea7d5fcd-88aa-4335-ac72-c2db843d3046" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Resume/resumeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Resume/resumeService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +78,9 @@
       <workItem from="1661922892497" duration="12520000" />
       <workItem from="1661994055993" duration="34070000" />
       <workItem from="1662360695450" duration="606000" />
-      <workItem from="1662407872151" duration="23786000" />
+      <workItem from="1662407872151" duration="23906000" />
+      <workItem from="1662514065502" duration="1958000" />
+      <workItem from="1662550255580" duration="50000" />
     </task>
     <servers />
   </component>
